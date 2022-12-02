@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Arome</title>
+  <!-- <link rel="stylesheet" href="./style.css"> -->
+  <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
+</head>
+
+<body>
+  <main>
+    <h1>Arome is awesome</h1>
+    <div id="table-wrapper">
+
+    </div>
+  </main>
+  <!-- <script src="index.js"></script> -->
+  <script>
+    const init = async () => {
+      console.log("in init")
+      const res = await fetch("/.netlify/functions/fetch_table")
+      console.log("res is", res)
+      const html = await res.text()
+      console.log("html is", html)
+      document.querySelector("main div").innerHTML = html
+    }
+    init()
+  </script>
+</body>
+
+</html>
