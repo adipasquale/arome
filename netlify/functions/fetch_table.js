@@ -1,3 +1,4 @@
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const jsdom = require("jsdom");
 
 exports.handler = async function (event, context) {
